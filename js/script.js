@@ -21,3 +21,4 @@ imgArray[4] = new Image();
 imgArray[4].src = 'img/05.webp';
 
 console.log(imgArray);
+
