@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+}
+
+.container{
+    width: 60%;
+    margin: 0 auto;
+    /* debug */
+    border: 1px solid #000;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+}
+
+.slider{
+    width: 100%;
+    height: 500px;
+    /* debug */
+    border: 1px solid #000;
+}
+
+.items-container{
+    width: 100%;
+    height: 100%;
+    /* debug */
+    background-color: coral;
+}
+
+.items-container .item{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.items-container .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
