@@ -29,6 +29,7 @@ img{
 .items-container .item{
     width: 100%;
     height: 100%;
+    display: none;
 }
 
 .items-container .item img{
@@ -36,4 +37,9 @@ img{
     height: 100%;
     object-fit: fill;
 }
+
+.item.active{
+    display: block;
+}
+
 
