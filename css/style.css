@@ -10,10 +10,8 @@ img{
 
 .container{
     width: 60%;
+    height: 100vh;
     margin: 0 auto;
-    /* debug */
-    border: 1px solid #000;
-    min-height: 700px;
     display: flex;
     align-items: center;
 }
@@ -21,21 +19,16 @@ img{
 .slider{
     width: 100%;
     height: 500px;
-    /* debug */
-    border: 1px solid #000;
 }
 
 .items-container{
     width: 100%;
     height: 100%;
-    /* debug */
-    background-color: coral;
 }
 
 .items-container .item{
     width: 100%;
     height: 100%;
-    object-fit: contain;
 }
 
 .items-container .item img{
