@@ -1,24 +1,79 @@
 // Consegna:
-// Dato un array contenente una lista di cinque immagini (che create voi in base alle img che vi passo),
-// creare un carosello come nello screenshot allegato.
+// Dato un array contenente una lista di cinque immagini creare un carosello come nello screenshot allegato.
 
-// creo l'array con le immagini:
-let imgArray = [];
 
-imgArray[0] = new Image();
-imgArray[0].src = 'img/01.webp';
+// creo variabile e salvo il contenuto del padre:
+let wrapper = document.querySelector(".items-container");
 
-imgArray[1] = new Image();
-imgArray[1].src = 'img/02.webp';
+// creo array per nome immagini:
+let arrImg = ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp"];
 
-imgArray[2] = new Image();
-imgArray[2].src = 'img/03.webp';
+// dichiaro la variabile immagine
+let img;
 
-imgArray[3] = new Image();
-imgArray[3].src = 'img/04.webp';
+// devo creare 5 immagini:
+for (let i = 0; i < arrImg.length; i++){
 
-imgArray[4] = new Image();
-imgArray[4].src = 'img/05.webp';
+    // assegno un valore alla variabile immagine:
+    img = document.createElement("img");
+    
+    // aggiungo al padre l'elemento img:
+    wrapper.append(img);
+    img.classList.add("item");
+    img.classList.add("image")
 
-console.log(imgArray);
+    // aggiungo il path: 
+    img.src = `img/${arrImg[i]}`;
+    console.log(img);
 
+}
+
+// creo una variabile e ci salvo i div item e associo alla prima immagine la classe active:
+let divItem = document.getElementsByClassName("item");
+divItem[0].classList.add("active");
+
+// creo variabile dell'indice:
+let activeItem = 0;
+
+// creo le variabili per i bottoni next e prev:
+let next = document.getElementById("next");
+let prev = document.getElementById("prev");
+
+// creo funzione per click su bottone next:
+next.addEventListener("click",
+    function(){
+
+        // creo la condizione per passare la classe active: 
+        if(activeItem < divItem.length -1){
+            divItem[activeItem].classList.remove("active");
+            activeItem++;
+            divItem[activeItem].classList.add("active");
+        };
+        // nascondo il bottone next:
+        if(activeItem == divItem.length - 1){
+            next.style.display = "none";
+        };
+
+        // faccio comparire il bottone prev:
+        if(activeItem > 0){
+            prev.style.display = "block";
+        }
+    }
+);
+
+// creo funzione per click su bottone prev: 
+prev.addEventListener("click",
+    function(){
+        if(activeItem > 0){
+            divItem[activeItem].classList.remove("active");
+            activeItem--;
+            divItem[activeItem].classList.add("active"); 
+        }
+        
+        // faccio scomparire il bottone prev:
+        if(activeItem == 0){
+            prev.style.display = "none";
+            next.style.display = "block";
+        }
+    }   
+);
