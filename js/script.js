@@ -8,14 +8,11 @@ let wrapper = document.querySelector(".items-container");
 // creo array per nome immagini:
 let arrImg = ["01.webp", "02.webp", "03.webp", "04.webp", "05.webp"];
 
-// dichiaro la variabile immagine
-let img;
-
 // devo creare 5 immagini:
 for (let i = 0; i < arrImg.length; i++){
 
-    // assegno un valore alla variabile immagine:
-    img = document.createElement("img");
+    // creo una variabile in cui creo il tag img: 
+    let img = document.createElement("img");
     
     // aggiungo al padre l'elemento img:
     wrapper.append(img);
@@ -59,7 +56,7 @@ next.addEventListener("click",
             prev.style.display = "block";
         }
     }
-);
+); 
 
 // creo funzione per click su bottone prev: 
 prev.addEventListener("click",
